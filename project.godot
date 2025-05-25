@@ -10,9 +10,13 @@ config_version=5
 
 [application]
 
-config/name="New Game Project"
+config/name="Vacation Game Dev"
 run/main_scene="uid://cxg27xeodrkmc"
 config/features=PackedStringArray("4.4", "Forward Plus")
+
+[autoload]
+
+Audio="*res://scenes/audio.tscn"
 
 [display]
 
