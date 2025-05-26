@@ -98,3 +98,5 @@ target_position = Vector2(8, 0)
 [node name="RayCastLeft" type="RayCast2D" parent="."]
 position = Vector2(0, 6)
 target_position = Vector2(-9, 0)
+
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]

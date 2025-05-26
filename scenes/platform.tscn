@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://6pifkmhr735u"]
+[gd_scene load_steps=4 format=3 uid="uid://6pifkmhr735u"]
 
 [ext_resource type="Texture2D" uid="uid://dot3531xx5fh5" path="res://assets/sprites/platforms.png" id="1_ba0x2"]
+[ext_resource type="AudioStream" uid="uid://bh2rbfnjg4fqo" path="res://assets/sounds/jump.wav" id="2_nlgqw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nlgqw"]
 size = Vector2(32, 9)
@@ -20,3 +21,7 @@ region_rect = Rect2(16, 32, 32, 9)
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_nlgqw")
 one_way_collision = true
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_nlgqw")
+autoplay = true
