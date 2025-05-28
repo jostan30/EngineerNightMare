@@ -1,11 +1,8 @@
 extends Area2D
 
-@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+@onready var game_manager: Node = $"../../GameManager"
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _on_body_entered(body: Node2D) -> void:
-	print("Coin +1")
-	audio_stream_player_2d.play()
-	queue_free()
+	game_manager.add_point()
+	animation_player.play("pickup")
