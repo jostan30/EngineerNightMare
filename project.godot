@@ -16,11 +16,15 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 
 [autoload]
 
-Music="*res://scenes/music.tscn"
+Music="*res://scenes/utility/music.tscn"
 
 [display]
 
 window/stretch/mode="canvas_items"
+
+[global_group]
+
+Enemies="Bad things/guys idk"
 
 [input]
 
