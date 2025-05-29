@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://cyt77x4sijevw"]
+
+[ext_resource type="Script" uid="uid://dqbgtccaw44pc" path="res://scripts/weapons/arm_projectile.gd" id="1_1y6bs"]
+[ext_resource type="Texture2D" uid="uid://cdlrldhhgspbc" path="res://assets/sprites/weapons/arm_projectile_glowing.png" id="2_hkg5d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mjk42"]
+atlas = ExtResource("2_hkg5d")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0idfi"]
+atlas = ExtResource("2_hkg5d")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q06et"]
+atlas = ExtResource("2_hkg5d")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txrma"]
+atlas = ExtResource("2_hkg5d")
+region = Rect2(0, 100, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2kb4"]
+atlas = ExtResource("2_hkg5d")
+region = Rect2(100, 100, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ec00c"]
+atlas = ExtResource("2_hkg5d")
+region = Rect2(200, 100, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kl6vt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mjk42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0idfi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q06et")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txrma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2kb4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ec00c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tmmlv"]
+size = Vector2(37, 15)
+
+[node name="ArmProjectile" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_1y6bs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kl6vt")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(27.5, -12.5)
+shape = SubResource("RectangleShape2D_tmmlv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

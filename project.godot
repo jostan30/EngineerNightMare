@@ -10,17 +10,21 @@ config_version=5
 
 [application]
 
-config/name="New Game Project"
+config/name="Vacation Game Dev"
 run/main_scene="uid://cxg27xeodrkmc"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
 [autoload]
 
-Music="*res://scenes/music.tscn"
+Music="*res://scenes/utility/music.tscn"
 
 [display]
 
 window/stretch/mode="canvas_items"
+
+[global_group]
+
+Enemies="Bad things/guys idk"
 
 [input]
 
