@@ -1,10 +1,8 @@
 extends CharacterBody2D
 
-
 const SPEED = 100.0
-const JUMP_VELOCITY = -250.0
+const JUMP_VELOCITY = -300.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
 var is_attacking =false 
 
 func _ready() ->void :
@@ -13,9 +11,9 @@ func _ready() ->void :
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
+		velocity += get_gravity() * delta
 		if not is_attacking  :
 			animated_sprite_2d.play("jump")
-			velocity += get_gravity() * delta
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -36,7 +34,6 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("move_left", "move_right")
 	if is_on_floor():
-		
 		if direction:
 			if direction == 1.0 :
 				animated_sprite_2d.flip_h =false
