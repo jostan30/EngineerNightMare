@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://cgnl7qwcqfk5x"]
+[gd_scene load_steps=40 format=3 uid="uid://cgnl7qwcqfk5x"]
 
 [ext_resource type="Texture2D" uid="uid://bhlhrsb6qk08v" path="res://new_assets/sprites/Mc/Knight_1/Idle.png" id="1_ig48j"]
 [ext_resource type="Script" uid="uid://dvrw8iyth34pg" path="res://scripts/main_character.gd" id="1_tqm6u"]
@@ -7,22 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://cs7deh0f05dvg" path="res://new_assets/sprites/Mc/Knight_1/Attack 1.png" id="3_d3a2h"]
 [ext_resource type="Texture2D" uid="uid://cx3hg2v6vsd71" path="res://new_assets/sprites/Mc/Knight_1/Jump.png" id="3_e6tc2"]
 [ext_resource type="Texture2D" uid="uid://c0ci108qhivm7" path="res://new_assets/sprites/Mc/Knight_1/Attack 2.png" id="4_0ltrl"]
-[ext_resource type="Texture2D" uid="uid://cyjegexxarspm" path="res://new_assets/sprites/Mc/Knight_1/Dead.png" id="5_o67j2"]
-[ext_resource type="Texture2D" uid="uid://dmvubkxq0eubk" path="res://new_assets/sprites/Mc/Knight_1/Defend.png" id="6_lotbi"]
-[ext_resource type="Texture2D" uid="uid://bt0535alxpmh3" path="res://new_assets/sprites/Mc/Knight_1/Hurt.png" id="7_g1p1k"]
 [ext_resource type="Script" uid="uid://clejiwl3llnyu" path="res://scripts/player_script/States/Idle.gd" id="8_0ltrl"]
+[ext_resource type="Script" uid="uid://ddrq423yacvcy" path="res://scripts/player_script/States/State.gd" id="8_d3a2h"]
 [ext_resource type="Script" uid="uid://5fkvj0sjgjkq" path="res://scripts/state_machine.gd" id="8_kvjf6"]
-[ext_resource type="Script" uid="uid://cw34n713l4xyx" path="res://scripts/player_script/States/Run.gd" id="10_hj3w6"]
-[ext_resource type="Script" uid="uid://crrw0s6xt5u4c" path="res://scripts/player_script/States/Jump.gd" id="11_hodpe"]
-[ext_resource type="Script" uid="uid://o7ysjap6ek5u" path="res://scripts/player_script/States/Attack_1.gd" id="12_hodpe"]
-[ext_resource type="Script" uid="uid://d0jqvov1iyhm1" path="res://scripts/player_script/States/Attack_2.gd" id="13_qoi8n"]
-[ext_resource type="Script" uid="uid://b18wrgnftpwbd" path="res://scripts/player_script/States/Attack_3.gd" id="14_pvtuh"]
-[ext_resource type="Script" uid="uid://bkxtk73yakrqa" path="res://scripts/player_script/States/Defend.gd" id="18_wtvrk"]
-[ext_resource type="Script" uid="uid://doaejb0e4f5r7" path="res://scripts/player_script/States/Dead.gd" id="19_nayhv"]
-[ext_resource type="Script" uid="uid://cnp6qe4cqtug2" path="res://scripts/player_script/States/Hurt.gd" id="20_ednkj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e6tc2"]
-radius = 18.0
+radius = 8.0
 height = 64.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x6ds7"]
@@ -76,46 +66,6 @@ region = Rect2(200, 0, 100, 86)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ednkj"]
 atlas = ExtResource("2_0d0nc")
 region = Rect2(300, 0, 100, 86)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_itr2f"]
-atlas = ExtResource("5_o67j2")
-region = Rect2(0, 0, 80, 86)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sqfxm"]
-atlas = ExtResource("5_o67j2")
-region = Rect2(80, 0, 80, 86)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_06tqa"]
-atlas = ExtResource("5_o67j2")
-region = Rect2(160, 0, 80, 86)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3q715"]
-atlas = ExtResource("5_o67j2")
-region = Rect2(240, 0, 80, 86)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uh1y6"]
-atlas = ExtResource("5_o67j2")
-region = Rect2(320, 0, 80, 86)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r0pi3"]
-atlas = ExtResource("5_o67j2")
-region = Rect2(400, 0, 80, 86)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mmtf4"]
-atlas = ExtResource("6_lotbi")
-region = Rect2(240, 0, 80, 86)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gb7vs"]
-atlas = ExtResource("6_lotbi")
-region = Rect2(320, 0, 80, 86)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hhbny"]
-atlas = ExtResource("7_g1p1k")
-region = Rect2(0, 0, 70, 86)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tuje5"]
-atlas = ExtResource("7_g1p1k")
-region = Rect2(70, 0, 70, 86)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k0aba"]
 atlas = ExtResource("1_ig48j")
@@ -231,54 +181,9 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_itr2f")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sqfxm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_06tqa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3q715")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uh1y6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_r0pi3")
-}],
-"loop": false,
-"name": &"dead",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mmtf4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gb7vs")
-}],
-"loop": false,
-"name": &"defend",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hhbny")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tuje5")
-}],
-"loop": false,
-"name": &"hurt",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_k0aba")
 }],
-"loop": true,
+"loop": false,
 "name": &"idle",
 "speed": 10.0
 }, {
@@ -327,7 +232,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hodpe")
 }],
-"loop": true,
+"loop": false,
 "name": &"run",
 "speed": 10.0
 }]
@@ -336,17 +241,14 @@ animations = [{
 script = ExtResource("1_tqm6u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 1)
+position = Vector2(-80, -5)
 shape = SubResource("CapsuleShape2D_e6tc2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(4, -9)
-scale = Vector2(1.14348, 1)
+position = Vector2(-71, -15)
 sprite_frames = SubResource("SpriteFrames_qoi8n")
-animation = &"defend"
+animation = &"Attack1"
 autoplay = "idle"
-frame = 1
-frame_progress = 1.0
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("8_kvjf6")
@@ -355,29 +257,15 @@ script = ExtResource("8_kvjf6")
 script = ExtResource("8_0ltrl")
 
 [node name="Run" type="Node" parent="StateMachine"]
-script = ExtResource("10_hj3w6")
 
 [node name="Jump" type="Node" parent="StateMachine"]
-script = ExtResource("11_hodpe")
 
 [node name="Attack1" type="Node" parent="StateMachine"]
-script = ExtResource("12_hodpe")
 
 [node name="Attack2" type="Node" parent="StateMachine"]
-script = ExtResource("13_qoi8n")
 
 [node name="Attack3" type="Node" parent="StateMachine"]
-script = ExtResource("14_pvtuh")
-
-[node name="Defend" type="Node" parent="StateMachine"]
-script = ExtResource("18_wtvrk")
-
-[node name="Dead" type="Node" parent="StateMachine"]
-script = ExtResource("19_nayhv")
-
-[node name="Hurt" type="Node" parent="StateMachine"]
-script = ExtResource("20_ednkj")
+script = ExtResource("8_d3a2h")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="animation_finished" from="AnimatedSprite2D" to="StateMachine/Attack1" method="_on_animated_sprite_2d_animation_finished"]
